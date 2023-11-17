@@ -1,30 +1,35 @@
-# React + TypeScript + Vite
+# Personal Budget Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+You can use the project live [Personal Budget Tracker](https://p-budget-tracker.netlify.app/).
 
-Currently, two official plugins are available:
+## Technologies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   React.
+-   TypeScript.
+-   Context.
+-   Mui.
+-   Apex Charts
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+-   Users can Get incomes. Create, Edit and Delete income.
+-   Users can Get expenses. Create, Edit and Delete expense.
+-   UI made by ant mui.
+-   Project made by React library + TypeScript.
+-   CRUD operators done in LocalStorage by context.
 
-- Configure the top-level `parserOptions` property like this:
+## how to run application
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+Download repository locally into your machine, then install dependencies by run the next command In the terminal.
+
+```console
+npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Then run the command in below.
+
+```console
+npm run dev
+```
+
+Open [http://127.0.0.1:5173/](http://127.0.0.1:5173/) to view it in the browser.
