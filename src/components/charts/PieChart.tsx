@@ -36,7 +36,8 @@ export const PieChart = ({
             <Stack direction='column'>
                 <Typography fontSize={14}>{title}</Typography>
                 <Typography fontSize={24} fontWeight={700} mt={1}>
-                    {value}
+                    &#36;{" "}
+                    {value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                 </Typography>
             </Stack>
 
