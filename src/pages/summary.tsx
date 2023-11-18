@@ -77,11 +77,11 @@ export const Summary = () => {
                 <Graph
                     series={[
                         {
-                            name: "Expense",
+                            name: "Income",
                             data: incomeData.map((one) => one.amount) || 0,
                         },
                         {
-                            name: "Income",
+                            name: "Expense",
                             data: expenseData.map((one) => one.amount) || 0,
                         },
                     ]}
