@@ -14,7 +14,7 @@ You can use the project live [Personal Budget Tracker](https://p-budget-tracker.
 
 -   Users can Get incomes. Create, Edit and Delete income.
 -   Users can Get expenses. Create, Edit and Delete expense.
--   UI made by ant mui.
+-   UI made by mui.
 -   Project made by React library + TypeScript.
 -   CRUD operators done in LocalStorage by context.
 
