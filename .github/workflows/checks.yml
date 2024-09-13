@@ -1,4 +1,4 @@
-name: Check Eslint and TS
+name: Check Eslint
 
 on:
     pull_request:
@@ -22,7 +22,9 @@ jobs:
                   npm install
 
             - name: "Execute the lint script (Eslint)"
-              run: "yarn lint"
+              run: |
+                  yarn lint || { echo "ESLint failed"; exit 1; }
 
             - name: "Execute the lint script (TS)"
-              run: "yarn lint:ts"
+              run: |
+                  yarn lint:ts || { echo "TypeScript linting failed"; exit 1; }
