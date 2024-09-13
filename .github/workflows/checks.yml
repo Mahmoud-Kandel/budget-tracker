@@ -1,0 +1,28 @@
+name: Pre-Merge Checks
+
+on:
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    checks:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v2
+              with:
+                  node-version: "16"
+
+            - name: Install dependencies
+              run: |
+                  npm install
+
+            - name: "Execute the lint script (Eslint)"
+              run: "yarn lint"
+
+            - name: "Execute the lint script (TS)"
+              run: "yarn lint:ts"
