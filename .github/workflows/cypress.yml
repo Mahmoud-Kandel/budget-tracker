@@ -1,9 +1,6 @@
 name: Run Cypress Tests
 
 on:
-    push:
-        branches:
-            - main
     pull_request:
         branches:
             - main
@@ -13,34 +10,24 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            # Checkout the code from the repo
             - name: Checkout code
               uses: actions/checkout@v3
 
-            # Set up Node.js
             - name: Set up Node.js
               uses: actions/setup-node@v3
               with:
                   node-version: "18"
 
-            # Install dependencies
             - name: Install dependencies
               run: npm install
 
-            # Run Cypress tests
-            - name: Run Cypress tests
-              uses: cypress-io/github-action@v5
-              with:
-                  start: npm start # If you need to start a local server before running tests
-                  wait-on: "http://localhost:3000" # Adjust URL and port if needed
-                  wait-on-timeout: 60 # Timeout in seconds
+            - name: Build project
+              run: npm run build
 
-            # Upload Cypress artifacts (e.g., screenshots, videos)
-            - name: Upload Cypress artifacts
-              if: failure() # Only upload artifacts if the tests fail
-              uses: actions/upload-artifact@v3
-              with:
-                  name: cypress-artifacts
-                  path: |
-                      cypress/screenshots/
-                      cypress/videos/
+            - name: Start server
+              run: npm start &
+              env:
+                  CI: true
+
+            - name: Run Cypress tests
+              run: npx cypress run
