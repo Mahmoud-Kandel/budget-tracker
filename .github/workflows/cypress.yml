@@ -19,15 +19,19 @@ jobs:
                   node-version: "18"
 
             - name: Install dependencies
-              run: npm install
+              run: yarn
 
             - name: Build project
-              run: npm run build
+              run: yarn build
 
             - name: Start server
-              run: npm start &
+              run: yarn dev &
               env:
                   CI: true
+
+            - name: Wait for server
+              run: npx wait-on http://localhost:3000
+              continue-on-error: false
 
             - name: Run Cypress tests
               run: npx cypress run

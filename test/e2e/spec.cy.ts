@@ -1,8 +1,9 @@
 import { elementsId } from "./constants";
+import { baseUrl } from "./constants";
 
 describe("example to-do app", () => {
     beforeEach(() => {
-        cy.visit("http://localhost:3000/");
+        cy.visit(baseUrl);
     });
 
     it("displays two todo items by default", () => {
