@@ -5,7 +5,6 @@ import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import { useNavigate } from "react-router-dom";
 
 export const NotFound = () => {
-    //
     const navigate = useNavigate();
     return (
         <Stack
