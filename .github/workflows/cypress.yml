@@ -19,13 +19,13 @@ jobs:
                   node-version: "18"
 
             - name: Install dependencies
-              run: npm install
+              run: yarn install
 
             - name: Build project
               run: yarn build
 
             - name: Start server
-              run: yarn dev &
+              run: yarn dev --port 3000 &
               env:
                   CI: true
 
