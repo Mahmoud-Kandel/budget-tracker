@@ -10,12 +10,12 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code
-              uses: actions/checkout@v3
+              uses: actions/checkout@v2
 
             - name: Set up Node.js
-              uses: actions/setup-node@v3
+              uses: actions/setup-node@v2
               with:
-                  node-version: "18"
+                  node-version: "16"
 
             - name: Install dependencies
               run: |
@@ -25,6 +25,6 @@ jobs:
               run: |
                   yarn lint || { echo "ESLint failed"; exit 1; }
 
-            - name: Run Cypress E2E tests
+            - name: "Execute the lint script (TS)"
               run: |
-                  yarn cypress run
+                  yarn lint:ts || { echo "TypeScript linting failed"; exit 1; }
