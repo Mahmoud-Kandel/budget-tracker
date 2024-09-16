@@ -29,15 +29,15 @@ jobs:
               run: |
                   yarn lint:ts || { echo "TypeScript linting failed"; exit 1; }
 
-            # - name: Run Cypress E2E tests
-            # - name: Start the dev server
+            - name: Run Cypress E2E tests
+            - name: Start the dev server
 
-            #   run: |
-            #     yarn dev --port 3000 &
-            #     sleep 15 # Ensure the server has enough time to start
-            #   run: |
-            #     yarn cypress:run
+              run: |
+                yarn dev --port 3000 &
+                sleep 15 # Ensure the server has enough time to start
+              run: |
+                yarn cypress:run
 
-            # - name: Stop the dev server
-            #   run: |
-            #   kill $(jobs -p)
+            - name: Stop the dev server
+              run: |
+              kill $(jobs -p)
