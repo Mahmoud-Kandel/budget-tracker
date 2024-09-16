@@ -1,4 +1,3 @@
-import React from "react";
 import { Container } from "@mui/material";
 import { Route, Routes, Navigate } from "react-router-dom";
 import { ModeProvider } from "./providers";
