@@ -6,6 +6,7 @@ import { reduceFun } from "../helpers";
 import { colors } from "../constants";
 import { MainHeader, PieChart, Graph } from "../components";
 import { Box, Stack } from "@mui/material";
+import { elementsId } from "../constants";
 
 export const Summary = () => {
     const [total, setTotal] = React.useState({
@@ -46,7 +47,13 @@ export const Summary = () => {
     return (
         <Stack sx={{ mt: 5, flexDirection: "column" }}>
             <MainHeader content='summary' />
-            <Box mt='20px' display='flex' flexWrap='wrap' gap={4}>
+            <Box
+                id={elementsId.summaryChartsContainer}
+                mt='20px'
+                display='flex'
+                flexWrap='wrap'
+                gap={4}
+            >
                 <PieChart
                     title='Total income'
                     labels={["Total income", "Total Expense"]}
