@@ -3,8 +3,7 @@ import * as React from "react";
 import { Income, Expense } from "../context";
 import { toast } from "react-toastify";
 import { reduceFun } from "../helpers";
-import { colors } from "../constants";
-import { MainHeader, PieChart, Graph } from "../components";
+import { MainHeader, Graph } from "../components";
 import { Box, Stack } from "@mui/material";
 import { elementsId } from "../constants";
 
@@ -15,6 +14,7 @@ export const Summary = () => {
         incomeInPercentage: 0,
         expenseInPercentage: 0,
     });
+    console.log(total);
 
     const { incomeData } = React.useContext(Income);
     const { expenseData } = React.useContext(Expense);
