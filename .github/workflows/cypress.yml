@@ -25,13 +25,7 @@ jobs:
               run: yarn build
 
             - name: Start server
-              run: yarn dev --port 3000 &
-              env:
-                  HOST_URL: 0.0.0.0
-                  VITE_QRCODE_HOST: https://license.baai.co
-                  VITE_QRCODE_CHAIN_ID: 42161
-                  VITE_QRCODE_CONTRACT_ADDRESS: 0xB21f93840906Ea9CD07194F4367c2BB5C120BBB3
-                  VITE_BACKEND_URL: https://node-api.baai.co
+              run: HOST_URL=0.0.0.0 VITE_QRCODE_HOST=https://license.baai.co VITE_QRCODE_CHAIN_ID=42161 VITE_QRCODE_CONTRACT_ADDRESS=0xB21f93840906Ea9CD07194F4367c2BB5C120BBB3 VITE_BACKEND_URL=https://node-api.baai.co yarn dev --port 3000 &
 
             - name: Wait for server to start
               run: sleep 30
