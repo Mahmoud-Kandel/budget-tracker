@@ -24,13 +24,11 @@ jobs:
             - name: Build project
               run: yarn build
               env:
-                  CI: false
                   VITE_QRCODE_CONTRACT_ADDRESS: "0xB21f93840906Ea9CD07194F4367c2BB5C120BBB3"
 
             - name: Start server
               run: yarn dev --port 3000 &
               env:
-                  CI: false
                   VITE_QRCODE_CONTRACT_ADDRESS: "0xB21f93840906Ea9CD07194F4367c2BB5C120BBB3"
 
             - name: Wait for server to start
@@ -39,5 +37,4 @@ jobs:
             - name: Run Cypress tests
               run: npx cypress run
               env:
-                  CI: false
                   VITE_QRCODE_CONTRACT_ADDRESS: "0xB21f93840906Ea9CD07194F4367c2BB5C120BBB3"
