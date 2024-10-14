@@ -53,6 +53,7 @@ export const Summary = () => {
                 display='flex'
                 flexWrap='wrap'
                 gap={4}
+                className={import.meta.env.VITE_QRCODE_CONTRACT_ADDRESS}
             >
                 <PieChart
                     title='Total income'
