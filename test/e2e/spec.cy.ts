@@ -7,8 +7,13 @@ describe("example to-do app", () => {
     });
 
     it("displays two todo items by default", () => {
-        console.log("import.meta.env.VITE_QRCODE_HOST");
         cy.get(`#${elementsId.summaryChartsContainer}`).should("exist");
-        cy.get(`#${elementsId.summaryChartsContainer}`).contains("42161");
+    });
+    it("displays two todo items by default", () => {
+        // check of className value
+        cy.get(`#${elementsId.summaryChartsContainer}`).should(
+            "have.class",
+            "0xB21f93840906Ea9CD07194F4367c2BB5C120BBB3"
+        );
     });
 });

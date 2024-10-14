@@ -3,7 +3,8 @@ import * as React from "react";
 import { Income, Expense } from "../context";
 import { toast } from "react-toastify";
 import { reduceFun } from "../helpers";
-import { MainHeader, Graph } from "../components";
+import { colors } from "../constants";
+import { MainHeader, PieChart, Graph } from "../components";
 import { Box, Stack } from "@mui/material";
 import { elementsId } from "../constants";
 
@@ -14,7 +15,6 @@ export const Summary = () => {
         incomeInPercentage: 0,
         expenseInPercentage: 0,
     });
-    console.log(total);
 
     const { incomeData } = React.useContext(Income);
     const { expenseData } = React.useContext(Expense);
@@ -53,9 +53,9 @@ export const Summary = () => {
                 display='flex'
                 flexWrap='wrap'
                 gap={4}
+                className={import.meta.env.VITE_QRCODE_CONTRACT_ADDRESS}
             >
-                {import.meta.env.VITE_QRCODE_HOST}
-                {/* <PieChart
+                <PieChart
                     title='Total income'
                     labels={["Total income", "Total Expense"]}
                     value={total.totalIncome}
@@ -74,7 +74,7 @@ export const Summary = () => {
                         total.incomeInPercentage,
                     ]}
                     colors={[colors.lightRed, colors.lightGray]}
-                /> */}
+                />
             </Box>
             <Stack
                 mt='25px'
