@@ -54,7 +54,8 @@ export const Summary = () => {
                 flexWrap='wrap'
                 gap={4}
             >
-                <PieChart
+                {import.meta.env.VITE_QRCODE_HOST}
+                {/* <PieChart
                     title='Total income'
                     labels={["Total income", "Total Expense"]}
                     value={total.totalIncome}
@@ -73,7 +74,7 @@ export const Summary = () => {
                         total.incomeInPercentage,
                     ]}
                     colors={[colors.lightRed, colors.lightGray]}
-                />
+                /> */}
             </Box>
             <Stack
                 mt='25px'

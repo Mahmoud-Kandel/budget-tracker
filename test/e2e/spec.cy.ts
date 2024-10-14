@@ -8,7 +8,7 @@ describe("example to-do app", () => {
 
     it("displays two todo items by default", () => {
         console.log("import.meta.env.VITE_QRCODE_HOST");
-        console.log(import.meta.env.VITE_QRCODE_HOST);
         cy.get(`#${elementsId.summaryChartsContainer}`).should("exist");
+        cy.get(`#${elementsId.summaryChartsContainer}`).contains("42161");
     });
 });
